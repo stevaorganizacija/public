@@ -9,7 +9,7 @@ on:
 jobs:
   dummy:
   
-    runs-on: [self-hosted, linuxtest]
+    runs-on: [self-hosted, linuxrucni]
    # runs-on: ubuntu-latest
     
     steps:
@@ -18,7 +18,7 @@ jobs:
   build:
     needs: dummy
    # runs-on: ubuntu-latest
-    runs-on: [self-hosted, linuxtest]
+    runs-on: [self-hosted, linuxrucni]
     steps:
     
     - name: build
@@ -26,7 +26,7 @@ jobs:
       run: echo "build app"
   deploy:
     needs: build
-    runs-on: [self-hosted, linuxtest]
+    runs-on: [self-hosted, linuxrucni]
     
     steps:
     - name: deploy
